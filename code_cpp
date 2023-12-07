@@ -1,0 +1,202 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main(){
+
+    cout << "Select shape: " << endl;
+
+    cout << "1.Circle" << endl;
+    cout << "2.Triangle" << endl;
+    cout << "3.Equilateral triangle" << endl;
+    cout << "4.Sqaure" << endl;
+    cout << "5.Rectangle" << endl;
+    cout << "6.Parallelogram" << endl;
+    cout << "7.Trapezium" << endl;
+    cout << "8.Rhombus" << endl;
+    cout << "9.Pentagon" << endl;
+    cout << "10.Hexagon" << endl;
+    cout << "11.More..." << endl;
+
+    int in;
+    int in_2;
+    cin >> in;
+
+    if (in == 11){
+
+        int dimension_one, dimension_two, dimension_three;
+
+        cout << "1.Heptagon" << endl;
+        cout << "2.Octagon" << endl;
+        cout << "3.Segment of a circle" << endl;
+        cout << "4.Ellipse" << endl;
+        cout << "5.Sector of a circle" << endl;
+
+        cin.ignore();
+        cin >> in_2;
+
+        switch(in_2){
+            case 1:
+                cout << "Fill in the length of the sides: ";
+                cin >> dimension_one;
+
+                cout << (7/4)*((dimension_one)^2)*1/(tan(180/7)) << endl;
+            break;
+
+            case 2:
+                 cout << "Fill in the length of the sides: ";
+                cin >> dimension_one;
+
+                cout << (2*(1+sqrt(2))*(dimension_one^2)) << "\n";
+            break;
+
+            case 3:
+                cout << "Fill in the radius of the segment: ";
+                cin >> dimension_one;
+                int angle;
+                cout << "1.angle in radians: \n";
+                cout << "2.angle in degrees: \n";
+                cout << "choose: "; cin >> angle;
+
+                cout << "Fill in the size of the angle: " ; cin >> dimension_two;
+                switch(angle){
+                    case 1:
+                        cout << (1/2)*(dimension_one^2)*(angle-sin(dimension_two)) << endl;
+                    break;
+
+                    case 2:
+                        cout << (1/2)*(dimension_one^2)*((M_PI/180)*(angle-sin(dimension_two))) << endl;
+                    break;
+
+                    default:
+                        cout << "Invalid selection" << endl;
+                }
+                
+
+            break;
+
+            case 4:
+                cout << "Fill in length of first axis of segment: "; cin >> dimension_one;
+                cout << "Fill in length of second axis of segment: "; cin >> dimension_two;
+
+                cout << (M_PI)*dimension_one*dimension_two << endl;
+
+            break;
+
+            case 5:
+                cout << "Fil in radius of sector: "; cin >> dimension_one;
+                int angle;
+                cout << "1.angle in radians: \n";
+                cout << "2.angle in degrees: \n";
+                cout << "choose: "; cin >> angle;
+
+                cout << "Fill in the size of the angle: " ; cin >> dimension_two;
+                switch(angle){
+                    case 1:
+                        cout << (dimension_two/360)*(M_PI*(dimension_one^2)) << endl;
+                    break;
+
+                    case 2:
+                        cout << (1/2)*((dimension_one^2)*dimension_two) << endl;
+                    break;
+
+                    default:
+                        cout << "Invalid selection" << endl;
+                }
+            break;
+
+            default:
+                cout << "Invalid selection" << endl;
+
+        }
+
+
+
+    }
+    else if(in < 11 && in > 0){
+        int dimension_one, dimension_two, dimension_three;
+
+        if (in == 1){
+            cout << "Fill in the radius of the circle: ";
+            cin >> dimension_one;
+            cout << ((M_PI)*(dimension_one^2)) << endl;
+        }
+
+        else if(in == 2){
+            cout << "Fill in the base of the triangle: ";  cin >> dimension_one; cout << endl;
+            cout << "Fill in the height of the triangle: "; cin >> dimension_two; cout  << endl;
+
+            cout << (1/2)*dimension_one*dimension_two << endl;
+        }
+        else if(in == 3){
+            cout << "Fill in the length of a side of the traingle: "; cin >> dimension_one; cout << endl;
+
+            cout << ((sqrt(3)/4)*(dimension_one^2)) << endl;
+        }
+        else if(in == 4){
+            cout << "Fill in the length of a side of the square: "; cin >> dimension_one; cout << endl;
+            
+            cout << (dimension_one^2) << endl;
+        }
+
+        else if(in == 5){
+            cout << "Fill in the height of the rectangle: "; cin >> dimension_one; cout << endl;
+            cout << "Fill in the base length of the rectangle: "; cin >> dimension_two; cout << endl;
+
+            cout << dimension_one*dimension_two << endl; 
+        }
+
+        else if(in == 6){
+            cout << "Fill in the height of the paralellogram: "; cin >> dimension_one; cout << endl;
+            cout << "Fill in the base length of the paralellogram: "; cin >> dimension_two; cout << endl;
+
+            cout << dimension_one*dimension_two << endl; 
+        }
+
+        else if(in == 7){
+            cout << "Fill in the height of the trapezium: "; cin >> dimension_one; cout << endl;
+            cout << "Fill in the top length of the trapezium: "; cin >> dimension_two; cout << endl;
+            cout << "Fill in the base length of the trapezium: "; cin >> dimension_three; cout << endl;
+
+            cout << dimension_one*(dimension_two+dimension_three)/2 << endl; 
+        }
+
+        else if(in == 8){
+            cout << "Fill in the side length of the rhombus: "; cin >> dimension_one; cout << endl;
+
+            cout << "Diagonal one of Rhombus: " << endl;
+
+
+            cout << "(" << dimension_one << "/sin(45)"  << ")*2" << endl;
+            
+            cout << "Diagonal two of rhombus: " << endl;
+
+            cout << "(" << dimension_one << "/cos(45)" << ")" << endl;
+
+            dimension_two = (dimension_one/sin(45))*2; dimension_three = (dimension_one/cos(45))*2;
+
+            cout << "Area = " << dimension_two*dimension_three << endl;
+        }
+
+        else if(in == 9){
+            cout << "Fill in the length of the sides of the pentagon: "; cin >> dimension_one; cout << endl;
+
+            cout << (1/2)*((dimension_one/2)/tan(36))*dimension_one << endl;
+        }
+        else if(in == 10){
+            cout << "Fill in the side length of the hexagon: "; cin >> dimension_one; cout << endl;
+
+            cout << ((3*sqrt(3))/2)*(dimension_one^2) << endl;
+
+        }
+
+
+    }
+    else{
+        cout << "Invalid Input...!" << endl;
+    }
+
+
+    system("pause");
+}
