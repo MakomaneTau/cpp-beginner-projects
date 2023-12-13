@@ -1,6 +1,6 @@
-#This repository conatains personal c++ projects. With the purpose of mastering c++ programming language
+# This repository conatains personal c++ projects. With the purpose of mastering c++ programming language
 
-##1. Area of Shapee C++ calculator
+## 1. Area of Shapee C++ calculator
 
 1. The program presents a menu to the user, asking them to select a shape.
 2. If the user chooses option 11, it provides more advance 2d shapes in a submenu.
@@ -8,7 +8,7 @@
 4. The code uses the switch statement to handle different shape options and their corresponding calculations.
 5. It utilizes mathematical formulas for calculating areas, including trigonometric functions like tan and sin, as well as constants like M_PI for pi.
 
-##2. Random password generator
+## 2. Random password generator
 
 ### This C++ program generates a random password of a specified length using characters from the ASCII character set.
 <ul>
